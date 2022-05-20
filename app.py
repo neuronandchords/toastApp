@@ -14,8 +14,7 @@ print(client.list_database_names())
 
 @app.route('/', methods=('GET','POST'))
 def index():
-    collection = db["Menu"]
-    return ("hello world!")
+    return ("hello arun welcome to toastApp!")
 
 #MENU OPERATIONS 
 
