@@ -63,7 +63,7 @@ def add_item_to_menu():
 
 
 
-#working on the orders part, basically maintaing a list of items and stroing it in DB. Please allow me some time to complete this I have a call at % after that I'll complete this. 
+#working on the orders part, basically maintaing a list of items and stroing it in DB. Please allow me some time to complete this I have a call at 5 after that I'll complete this. 
 @app.route('/addOrder', methods=['POST'])
 def add_item():
         _json = request.json
