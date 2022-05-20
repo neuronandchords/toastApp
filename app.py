@@ -40,7 +40,7 @@ def add_item():
                 return ("Item added")
             except Exception as e:
                 return (str(e))
-        return ("new item")
+        return ("already exists")
 
 @app.route('/getItem', methods=['GET'])
 def view_item():
@@ -68,10 +68,10 @@ def add_item_to_menu():
 def add_item():
         _json = request.json
         order_id = _json['order_id']
-        name = _json['name']
-        desc = _json['desc']
-        price = _json['price']
-        existsOrNot = client.toastApp.items.find_one({"item_id":item_id})
+        payment_mode = _json['payment_mode']
+        billValue = _json['billValue']
+        items = _json['items']
+        existsOrNot = client.toastApp.orders.find_one({"item_id":order_id})
         if(not existsOrNot):
             try:
                 insert= client.toastApp.items.insert_one({'item_id': item_id, 'name': name, '': desc, 'price': price})
